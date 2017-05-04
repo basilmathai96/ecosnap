@@ -15,6 +15,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         maps_fab= (FloatingActionButton) findViewById(R.id.maps);
         image_fab= (FloatingActionButton) findViewById(R.id.image);
         feed_fab= (FloatingActionButton) findViewById(R.id.feed);
@@ -52,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         maps_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+
                 if(isMapsFabOpen){
                     maps_fab.startAnimation(rotate_backward);
                     recent_map.startAnimation(fab_close);
@@ -116,7 +123,14 @@ public class MainActivity extends AppCompatActivity {
         feed_fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("species");
+                myRef.child("Name").setValue("Wishnu").addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getApplicationContext(),"Sent data",Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
