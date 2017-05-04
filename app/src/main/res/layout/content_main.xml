@@ -12,84 +12,90 @@
     tools:context="com.example.user.ecosnap.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/maps"
+        android:orientation="vertical"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentLeft="true">
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/alien"
-        android:layout_marginTop="29dp"
-        android:layout_below="@+id/maps"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:visibility="invisible" />
+       <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/migration"
-        android:layout_below="@+id/alien"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp"
-        android:visibility="invisible" />
+           <android.support.design.widget.FloatingActionButton
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:layout_weight="1"
+               android:id="@+id/maps"
+               android:src="@drawable/map" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="37dp"
-        android:layout_marginStart="37dp"
-        android:id="@+id/recent"
-        android:layout_above="@+id/alien"
-        android:layout_toRightOf="@+id/maps"
-        android:layout_toEndOf="@+id/maps"
-        android:visibility="invisible" />
+           <android.support.design.widget.FloatingActionButton
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:layout_weight="1"
+               android:id="@+id/recent"
+               android:src="@drawable/abc_btn_radio_to_on_mtrl_015" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/geography"
-        android:layout_above="@+id/alien"
-        android:layout_centerHorizontal="true"
-        android:visibility="invisible" />
+           <android.support.design.widget.FloatingActionButton
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:layout_weight="1"
+               android:id="@+id/geography"
+               android:src="@drawable/ic_cloud_circle_black_24dp" />
+       </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/image"
-        android:layout_alignTop="@+id/alien"
-        android:layout_alignLeft="@+id/recent"
-        android:layout_alignStart="@+id/recent" />
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/alien"
+                android:src="@drawable/abc_ratingbar_indicator_material" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gallary"
-        android:layout_alignTop="@+id/image"
-        android:layout_alignLeft="@+id/geography"
-        android:layout_alignStart="@+id/geography"
-        android:visibility="invisible" />
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image"
+                android:src="@drawable/ic_filter_b_and_w_black_24dp" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/camera"
-        android:layout_alignTop="@+id/migration"
-        android:layout_alignLeft="@+id/image"
-        android:layout_alignStart="@+id/image"
-        android:visibility="invisible" />
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gallary"
+                android:src="@drawable/ic_photo_black_24dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/feed"
-        android:layout_alignTop="@+id/camera"
-        android:layout_alignLeft="@+id/gallary"
-        android:layout_alignStart="@+id/gallary" />
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/migration"
+                android:src="@drawable/ic_compare_arrows_black_24dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/camera"
+                android:src="@drawable/camera" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/feed"
+                android:src="@drawable/feeed" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 </RelativeLayout>
